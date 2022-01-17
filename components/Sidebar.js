@@ -20,7 +20,7 @@ const Sidebar = () => {
         <div className="flex items-center justify-center w-14 h-14 p-0 xl:ml-24 hoverAnimation">
           <Image src="https://rb.gy/ogau5a" width={30} height={30} alt="logo" />
         </div>
-        <div className="space-y-2 mt-4 mb-2.5 xl:ml-24">
+        <div className="mt-4 mb-2.5 xl:ml-24">
           <SidebarLink text="Home" Icon={FaHome} active />
           <SidebarLink text="Explore" Icon={FaHashtag} />
           <SidebarLink text="Notifications" Icon={FaBell} />
@@ -33,7 +33,6 @@ const Sidebar = () => {
         <button className="hidden xl:inline ml-auto bg-[#1d9bf0] text-white rounded-full w-56 h-[52px] text-2xl font-bold shadow-md hover:bg-[#1a8cd8]">
           Tweet
         </button>
-
         <div
           className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverAnimation xl:ml-auto xl:-mr-0"
           // onClick={signOut}
@@ -41,7 +40,7 @@ const Sidebar = () => {
           <img
             src="https://source.unsplash.com/random/1600*900/?logo"
             alt=""
-            className="h-10 w-10 rounded-full xl:mr-2.5"
+            className="h-10 w-10 rounded-full xl:mr-2.5 border-gray-600 border-2"
           />
           <div className="hidden xl:inline leading-5">
             <h4 className="font-bold">{"UserName"}</h4>
@@ -49,21 +48,6 @@ const Sidebar = () => {
           </div>
           <BiDotsHorizontalRounded className="h-5 hidden xl:inline ml-10" />
         </div>
-        
-        {/* <div className="text-[#d9d9d9] flex items-center justify-start hoverAnimation xl:ml-auto xl:mr-3 mt-auto">
-          <Image
-            src="https://source.unsplash.com/random/1600*900/?logo"
-            alt="user"
-            height={40}
-            width={40}
-            className="rounded-full h-10 w-10 xl:mr-2.5 ml-[6px] xl:ml-0 border-gray-600 border-2"
-          />
-          <div className="hidden xl:inline xl:ml-3 leading-5">
-            <h4 className="font-bold">Zorro</h4>
-            <p className="text-[#6e767d]">@strawhat</p>
-          </div>
-          <BiDotsHorizontalRounded className="h-5 hidden xl:inline ml-10" />
-        </div> */}
       </div>
     );
 }
