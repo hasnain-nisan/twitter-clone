@@ -33,11 +33,11 @@ const Sidebar = () => {
         <button className="hidden xl:inline ml-auto bg-[#1d9bf0] text-white rounded-full w-56 h-[52px] text-2xl font-bold shadow-md hover:bg-[#1a8cd8]">
           Tweet
         </button>
-        <div className="text-[#d9d9d9] flex items-center justify-start hoverAnimation xl:ml-auto -mr-5 xl:mr-5 mt-auto">
+        <div className="text-[#d9d9d9] flex items-center justify-start hoverAnimation xl:ml-auto xl:mr-3 mt-auto">
           <img
             src="https://source.unsplash.com/random/1600*900/?logo"
             alt="user"
-            className="rounded-full h-10 w-10 xl:mr-2.5"
+            className="rounded-full h-10 w-10 xl:mr-2.5 ml-[6px] xl:ml-0 border-gray-600 border-2"
           />
           <div className="hidden xl:inline leading-5">
             <h4 className="font-bold">Zorro</h4>
