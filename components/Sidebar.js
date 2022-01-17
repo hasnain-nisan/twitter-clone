@@ -34,12 +34,14 @@ const Sidebar = () => {
           Tweet
         </button>
         <div className="text-[#d9d9d9] flex items-center justify-start hoverAnimation xl:ml-auto xl:mr-3 mt-auto">
-          <img
+          <Image
             src="https://source.unsplash.com/random/1600*900/?logo"
             alt="user"
+            height={40}
+            width={40}
             className="rounded-full h-10 w-10 xl:mr-2.5 ml-[6px] xl:ml-0 border-gray-600 border-2"
           />
-          <div className="hidden xl:inline leading-5">
+          <div className="hidden xl:inline xl:ml-3 leading-5">
             <h4 className="font-bold">Zorro</h4>
             <p className="text-[#6e767d]">@strawhat</p>
           </div>
