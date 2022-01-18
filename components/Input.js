@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react'
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
 import {db, storage} from '../firbase'
+import { useSession, signOut } from "next-auth/react";
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import {
     addDoc,
@@ -20,6 +21,8 @@ import {
 
 const Input = () => {
 
+  const { data: session } = useSession();
+
     const [input, setInput] = useState("")
     const [selectedFile, setSelectedFile] = useState(false)
     const [showEmojis, setShowEmojis] = useState(false)
@@ -32,10 +35,10 @@ const Input = () => {
         setLoading(true)
 
         const docRef = await addDoc(collection(db, 'posts'), {
-            // id: session.user.uid,
-            // username: session.user.name,
-            // userImg: session.user.image,
-            // tag: session.user.tag,
+            id: session.user.uid,
+            username: session.user.name,
+            userImg: session.user.image,
+            tag: session.user.tag,
             text: input,
             timestamp: serverTimestamp(),
         })
@@ -82,7 +85,7 @@ const Input = () => {
         className={`border-b border-gray-700 p-3 flex items-start space-x-3 ${loading && "opacity-60"}`}
       >
         <img
-          src="https://source.unsplash.com/random/1600*900/?profile"
+          src={session.user.image}
           alt=""
           className="h-11 w-11 rounded-full cursor-pointer"
         />

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react'
 import SidebarLink from './SidebarLink';
+import { useSession, signOut } from "next-auth/react";
 import {HiDotsCircleHorizontal} from 'react-icons/hi'
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
 import {
@@ -15,6 +16,9 @@ import {
 
 
 const Sidebar = () => {
+
+  const { data: session } = useSession();
+
     return (
       <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full">
         <div className="flex items-center justify-center w-14 h-14 p-0 xl:ml-24 hoverAnimation">
@@ -35,16 +39,16 @@ const Sidebar = () => {
         </button>
         <div
           className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverAnimation xl:ml-auto xl:-mr-0"
-          // onClick={signOut}
+          onClick={signOut}
         >
           <img
-            src="https://source.unsplash.com/random/1600*900/?logo"
+            src={session?.user?.image}
             alt=""
             className="h-10 w-10 rounded-full xl:mr-2.5 border-gray-600 border-2"
           />
           <div className="hidden xl:inline leading-5">
-            <h4 className="font-bold">{"UserName"}</h4>
-            <p className="text-[#6e767d]">@{"Some-Tag"}</p>
+            <h4 className="font-bold">{session.user.name}</h4>
+            <p className="text-[#6e767d]">@{session.user.tag}</p>
           </div>
           <BiDotsHorizontalRounded className="h-5 hidden xl:inline ml-10" />
         </div>
