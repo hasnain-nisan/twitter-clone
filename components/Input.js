@@ -14,11 +14,18 @@ const Input = () => {
     const [input, setInput] = useState("")
     const [selectedFile, setSelectedFile] = useState(false)
     const [showEmojis, setShowEmojis] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const filePickerRef = useRef()
 
-    const addImageToPost = () => {
+    const sendPost = () => {
+        if(loading) return;
+        setLoading(true)
 
+        // const docRef
+    };
+
+    const addImageToPost = () => {
     }
 
     const addEmoji = (e) => {
@@ -110,6 +117,7 @@ const Input = () => {
             <button 
                 disabled={!input.trim() && !selectedFile ? true : false}
                 className="bg-[#1d9bf0] text-white rounded-full px-4 py-1.5 font-mold shadow-md hover:bg-[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={sendPost}
             >
                 Tweet
             </button>
