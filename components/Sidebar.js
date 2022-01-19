@@ -50,7 +50,7 @@ const Sidebar = () => {
             <h4 className="font-bold">{session.user.name}</h4>
             <p className="text-[#6e767d]">@{session.user.tag}</p>
           </div>
-          <BiDotsHorizontalRounded className="h-5 hidden xl:inline ml-10" />
+          <BiDotsHorizontalRounded className="h-5 hidden xl:inline ml-5" />
         </div>
       </div>
     );
