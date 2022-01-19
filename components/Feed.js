@@ -33,8 +33,10 @@ const Feed = () => {
             <Input/>
 
             <div className="pb-72">
-                {posts.length > 0 ? (
-                    posts.map(post => <Post key={post.id} id={post.id} post={post.data()}/>)
+                {posts?.length > 0 ? (
+                    posts.map(post => {
+                        return <Post key={post.id} id={post.id} post={post.data()} />;
+                    })
                 ) : (
                     "no post available"
                 )}
