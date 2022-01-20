@@ -4,6 +4,7 @@ import SidebarLink from './SidebarLink';
 import { useSession, signOut } from "next-auth/react";
 import {HiDotsCircleHorizontal} from 'react-icons/hi'
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
+import { useRouter } from "next/router";
 import {
   FaHashtag,
   FaBell,
@@ -18,11 +19,18 @@ import {
 const Sidebar = () => {
 
   const { data: session } = useSession();
+  const router = useRouter();
 
     return (
       <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full">
-        <div className="flex items-center justify-center w-14 h-14 p-0 xl:ml-24 hoverAnimation">
-          <Image src="https://rb.gy/ogau5a" width={30} height={30} alt="logo" />
+        <div className="cursor-pointer flex items-center justify-center w-14 h-14 p-0 xl:ml-24 hoverAnimation">
+          <Image
+            src="https://rb.gy/ogau5a"
+            width={30}
+            height={30}
+            alt="logo"
+            onClick={() => router.push("/")}
+          />
         </div>
         <div className="mt-4 mb-2.5 xl:ml-24">
           <SidebarLink text="Home" Icon={FaHome} active />

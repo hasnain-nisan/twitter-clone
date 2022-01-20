@@ -72,7 +72,7 @@ const Modal = () => {
       setIsOpen(false)
       setComment("")
 
-      router.push(`post/${postId}`)
+      router.push(`/post/${postId}`)
     }
 
     console.log(postId);

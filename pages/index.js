@@ -6,6 +6,7 @@ import Modal from '../components/Modal'
 import styles from '../styles/Home.module.css'
 import { getProviders, getSession, useSession } from "next-auth/react";
 import Login from '../components/Login';
+import Widgets from '../components/Widgets';
 
 export default function Home({ trendingResults, followResults, providers }) {
   
@@ -26,8 +27,12 @@ export default function Home({ trendingResults, followResults, providers }) {
 
         {/* feed */}
         <Feed />
-        
+
         {/* widgets */}
+        <Widgets
+          trendingResults={trendingResults}
+          followResults={followResults}
+        />
 
         {/* modal */}
         <Modal />

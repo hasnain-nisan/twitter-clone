@@ -12,8 +12,9 @@ import {AiOutlineArrowLeft} from 'react-icons/ai'
 import Post from "../../components/Post";
 import { useRouter } from "next/router";
 import Comment from "../../components/Comment";
+import Widgets from "../../components/Widgets";
 
-const PostPage = ({ providers }) => {
+const PostPage = ({ providers, trendingResults, followResults }) => {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useRecoilState(modalState);
   const [postId, setPostId] = useRecoilState(postIdState);
@@ -82,9 +83,11 @@ const PostPage = ({ providers }) => {
           )}
         </div>
 
-        {/* feed */}
-
         {/* widgets */}
+        <Widgets
+          trendingResults={trendingResults}
+          followResults={followResults}
+        />
 
         {/* modal */}
         <Modal />
