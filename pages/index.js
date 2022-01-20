@@ -30,9 +30,6 @@ export default function Home({ trendingResults, followResults, providers }) {
         {/* widgets */}
 
         {/* modal */}
-        {
-          
-        }
         <Modal />
       </main>
     </div>
