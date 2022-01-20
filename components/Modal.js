@@ -72,8 +72,10 @@ const Modal = () => {
       setIsOpen(false)
       setComment("")
 
-      router.push(`${postId}`)
+      router.push(`post/${postId}`)
     }
+
+    console.log(postId);
 
     return (
       <Transition appear show={isOpen} as={Fragment}>

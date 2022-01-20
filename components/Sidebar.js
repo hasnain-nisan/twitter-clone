@@ -47,8 +47,8 @@ const Sidebar = () => {
             className="h-10 w-10 rounded-full xl:mr-2.5 border-gray-600 border-2"
           />
           <div className="hidden xl:inline leading-5">
-            <h4 className="font-bold">{session.user.name}</h4>
-            <p className="text-[#6e767d]">@{session.user.tag}</p>
+            <h4 className="font-bold">{session?.user?.name}</h4>
+            <p className="text-[#6e767d]">@{session?.user?.tag}</p>
           </div>
           <BiDotsHorizontalRounded className="h-5 hidden xl:inline ml-5" />
         </div>

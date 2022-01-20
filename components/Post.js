@@ -73,7 +73,10 @@ function Post({ id, post, postPage }) {
   return (
     <div
       className="p-3 flex cursor-pointer border-b border-gray-700"
-      onClick={() => router.push(`/${id}`)}
+      onClick={() => {
+        setPostId(id)
+        router.push(`/post/${id}`)
+      }}
     >
       {!postPage && (
         <img
